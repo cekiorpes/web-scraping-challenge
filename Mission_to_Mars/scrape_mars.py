@@ -50,7 +50,7 @@ def scrape():
     facts_df = tables[1]
 
     #Convert the data to HTML
-    html_table = facts_df.to_html()
+    html_table = facts_df.to_html(index = False, header = False)
 
     #Get rid of extra white space
     mars_facts_html = html_table.replace('\n', '')
@@ -88,11 +88,11 @@ def scrape():
 
     #Store data in a dictionary
     mars_data = {
-        "News Title": news_title,
-        "News paragraph": news_p,
-        "Featured image URL": featured_image_url,
-        "Facts Table": mars_facts_html,
-        "Hemisphere Images": hemisphere_img_urls
+        "news_title": news_title,
+        "news_p": news_p,
+        "featured_image_url": featured_image_url,
+        "mars_facts_html": mars_facts_html,
+        "hemisphere_img_urls": hemisphere_img_urls
     }
 
     # Close the browser after scraping
