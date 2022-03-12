@@ -22,6 +22,7 @@
           >
         </p>
       </div>
+
       <div class="container">
         <div class="row">
           <div class="col-md-6">
@@ -33,6 +34,7 @@
               <p>{{dict.news_p}}</p>
             </div>
           </div>
+
           <div class="row">
             <div class="col-md-8">
               <h2>Featured Mars Image</h2>
@@ -42,11 +44,26 @@
                 alt="Responsive image"
               />
             </div>
+
             <div class="col-md-4">
               <h4>Mars Facts</h4>
               <table class="table-responsive">   
                 {{dict.mars_facts_html | safe}}
               </table>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12">
+              <h3 style="text-align: center;">Mars Hemispheres</h3>
+              <hr class="new">
+                {% for hemisphere in dict.hemisphere_img_urls %}
+                <div class="col-md-3">
+                  <img class="image-responsive" style="max-width: 250px;" src="{{ hemisphere.Image_URL }}">
+                  <h5>{{hemisphere.Title}}</h5>
+                </div>
+                {% endfor %}
+              </div>
             </div>
           </div>
         </div>

@@ -78,10 +78,10 @@ def scrape():
         title = hemi_title.replace("Enhanced", "")
 
         img = soup.find("div", class_="downloads")
-        image_url = img.find_all('a')[1]["href"]
+        image_url = img.find_all('a')[0]["href"]
         img_url = hemispheres_url + image_url
         
-        hemisphere_img_urls.append({"Title": title, "Image URL": img_url})
+        hemisphere_img_urls.append({"Title": title, "Image_URL": img_url})
         
         browser.links.find_by_partial_text('Back').click()
         time.sleep(2)
