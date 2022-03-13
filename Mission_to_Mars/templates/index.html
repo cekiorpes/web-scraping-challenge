@@ -27,6 +27,7 @@
           >
         </p>
       </div>
+
       <!-- Mars News title and text paragraph -->
       <div class="container">
         <div class="row">
@@ -39,6 +40,7 @@
               <p>{{dict.news_p}}</p>
             </div>
           </div>
+
           <!-- Mars Featured Image -->
           <div class="row">
             <div class="col-md-8">
@@ -49,6 +51,7 @@
                 alt="Responsive image"
               />
             </div>
+
             <!-- Mars vs Earth facts table with formatting -->
             <div class="col-md-4">
               <h4>Mars Facts</h4>
@@ -60,25 +63,21 @@
               </table>
             </div>
           </div>
+
           <!-- Mars Hemisphere pictures and titles - rendered from dictionary -->
           <div class="row">
             <div class="col-md-12">
               <h3 style="text-align: center">Mars Hemispheres</h3>
               <hr class="new" />
             </div>
-          </div>
-          <div class="row">
-            <div class="card col-md-3">
-              {% for hemisphere in dict.hemisphere_img_urls %}
-                <img
-                  class="image-responsive card-img-top"
-                  style="max-width: 225px;"
-                  src="{{ hemisphere.Image_URL }}"
-                />
-              <div class="card-body">
-                <h5 class="card-title">{{hemisphere.Title}}</h5>
+            <div class="row">
+                {% for hemisphere in dict.hemisphere_img_urls %}
+                <div class="col-md-3">
+                  <img class="image-responsive" style="max-width:250px;" src="{{hemisphere.Image_URL}}" alt="Hemisphere image">
+                  <h5>{{hemisphere.Title}}</h5>
+                </div>
+                {% endfor %}
               </div>
-              {% endfor %}
             </div>
           </div>
         </div>
@@ -86,3 +85,17 @@
     </div>
   </body>
 </html>
+
+<!-- </div>
+<div class="row">
+  <div class="card col-md-3">
+    {% for hemisphere in dict.hemisphere_img_urls %}
+      <img
+        class="image-responsive card-img-top"
+        style="max-width: 250px;"
+        src="{{ hemisphere.Image_URL }}"
+      />
+    <div class="card-body">
+      <h5 class="card-title">{{hemisphere.Title}}</h5>
+    </div>
+    {% endfor %} -->
