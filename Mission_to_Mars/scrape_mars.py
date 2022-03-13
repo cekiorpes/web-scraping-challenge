@@ -47,7 +47,7 @@ def scrape():
     tables = pd.read_html(table_url)
 
     #Get the facts table
-    facts_df = tables[1]
+    facts_df = tables[0]
 
     #Convert the data to HTML
     html_table = facts_df.to_html(index = False, header = False)
