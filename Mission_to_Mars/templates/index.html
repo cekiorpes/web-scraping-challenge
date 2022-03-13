@@ -11,10 +11,26 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
+    <!-- Styles for facts table -->
+    <style>
+      table, th, td {
+        border: 1px solid;
+        height: 10px;
+      }
+
+      td{
+        padding: 10px;
+      }
+
+      tr:nth-child(even){
+        background-color: #f2f2f2;
+      }
+    </style>
   </head>
-  <!-- Jumbotron with scrape button -->
+
   <body>
-    <div class="container-fluid">
+  <!-- Jumbotron with scrape button -->
+    <div class="container">
       <div
         class="jumbotron text-center"
         style="background-color: rgb(207, 206, 206); padding-bottom: 10px"
@@ -32,7 +48,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-6">
-            <h3>Latest Mars News:</h3>
+            <h3 style="padding-top: 10px; padding-bottom: 10px;">Latest Mars News:</h3>
           </div>
           <div class="row">
             <div class="col-md-8">
@@ -55,10 +71,7 @@
             <!-- Mars vs Earth facts table with formatting -->
             <div class="col-md-4">
               <h4>Mars Facts</h4>
-              <table
-                class="table-responsive"
-                style="border: 1px solid; height: 4px"
-              >
+              <table class="table-responsive">
                 {{dict.mars_facts_html | safe}}
               </table>
             </div>
@@ -67,7 +80,7 @@
           <!-- Mars Hemisphere pictures and titles - rendered from dictionary -->
           <div class="row">
             <div class="col-md-12">
-              <h3 style="text-align: center">Mars Hemispheres</h3>
+              <h3 style="text-align: center" style="padding:20px;">Mars Hemispheres</h3>
               <hr class="new" />
             </div>
             <div class="row">
@@ -85,17 +98,3 @@
     </div>
   </body>
 </html>
-
-<!-- </div>
-<div class="row">
-  <div class="card col-md-3">
-    {% for hemisphere in dict.hemisphere_img_urls %}
-      <img
-        class="image-responsive card-img-top"
-        style="max-width: 250px;"
-        src="{{ hemisphere.Image_URL }}"
-      />
-    <div class="card-body">
-      <h5 class="card-title">{{hemisphere.Title}}</h5>
-    </div>
-    {% endfor %} -->
