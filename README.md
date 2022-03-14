@@ -10,4 +10,4 @@ Data was scraped from four sites relating to the Mission to Mars:
 
 A Flask app script was created, with a landing page and a route that used the scrape function (from scrape_mars.py) to collect the above data, store it in MongoDB as a Python dictionary, and then pass the data into an HTML template to be displayed. 
 
-![Application screenshot](Final_screenshot.png)
+![Application screenshot](final_screenshot.png)
